@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'nga-produt-detail',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produt-detail.component.css']
 })
 export class ProdutDetailComponent implements OnInit {
-
-  constructor() { }
-
+  productCategory: string;
+  constructor(route: ActivatedRoute) {
+  this.productCategory = route.snapshot.queryParamMap.get('category')}
   ngOnInit() {
   }
 

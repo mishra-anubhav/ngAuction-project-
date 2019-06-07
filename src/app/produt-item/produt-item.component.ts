@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'nga-produt-item',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produt-item.component.css']
 })
 export class ProdutItemComponent implements OnInit {
-
-  constructor() { }
+productId:string;
+  constructor(route:ActivatedRoute) {
+    this.productId=route.snapshot.paramMap.get('id')
+   }
 
   ngOnInit() {
   }

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ProdutItemComponent } from './produt-item/produt-item.component';
 import { ProdutDetailComponent } from './produt-detail/produt-detail.component';
 import { StarsComponent } from './stars/stars.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { Component404Component } from './component404/component404.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,14 @@ import { StarsComponent } from './stars/stars.component';
     HomeComponent,
     ProdutItemComponent,
     ProdutDetailComponent,
-    StarsComponent
+    StarsComponent,
+    Component404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers:[{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
