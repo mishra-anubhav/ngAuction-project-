@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProdutDetailComponent } from './produt-detail/produt-detail.component'
-import { ProdutItemComponent } from './produt-item/produt-item.component';
-import { Component404Component } from './component404/component404.component';
+import {HomeComponent} from './home/home.component';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  // {path: '**' ,component:Component404Component},
-  {path: 'product/:id', component: ProdutItemComponent, 
-  },
-  {path: 'products', component: ProdutDetailComponent}
-
+  { path: '', component: HomeComponent},
+  { path: 'products/:productId', component: ProductDetailComponent}
 ];
 
 @NgModule({
